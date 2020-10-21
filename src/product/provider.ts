@@ -39,14 +39,15 @@ class ProductProvider {
   }
 
   /**
-   * Get categories.
+   * Get all categories
    *
    * @param {string} organizationId
+   * @param {{ [key: string]: any }} [params]
    * @returns
    * @memberof ProductProvider
    */
-  public categories(organizationId: string) {
-    return getCategories(organizationId);
+  public categories(organizationId: string, params?: { [key: string]: any }) {
+    return getCategories(organizationId, params);
   }
 
   /**

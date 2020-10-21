@@ -59,8 +59,12 @@ class ProductApi {
    * @static
    * @memberof ProductApi
    */
-  public static getCategories = (organizationId: string) =>
+  public static getCategories = (
+    organizationId: string,
+    params?: { [key: string]: any },
+  ) =>
     fetcher.get<ICategoryResponse[]>(endpoints.CATEGORIES_ALL, {
+      ...params,
       organizationId,
     });
 
