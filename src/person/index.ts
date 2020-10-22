@@ -1,5 +1,3 @@
-import { PersonProvider } from './provider';
+import * as actions from './actions';
 
-const instance = new PersonProvider();
-
-export const person = (): PersonProvider => instance;
+export const person = { ...actions };

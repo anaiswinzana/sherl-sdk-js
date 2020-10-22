@@ -1,5 +1,3 @@
-import { PlaceProvider } from './provider';
+import * as actions from './actions';
 
-const instance = new PlaceProvider();
-
-export const place = (): PlaceProvider => instance;
+export const place = { ...actions };
