@@ -1,5 +1,3 @@
-import { ProductProvider } from './provider';
+import * as actions from './actions';
 
-const instance = new ProductProvider();
-
-export const product = (): ProductProvider => instance;
+export const product = { ...actions };

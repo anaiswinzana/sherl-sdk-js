@@ -1,4 +1,6 @@
-export * from './common';
+import { init } from './common';
+
+export { init };
 export * from './auth';
 export * from './product';
 export * from './person';

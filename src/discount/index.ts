@@ -1,5 +1,3 @@
-import { DiscountProvider } from './provider';
+import * as actions from './actions';
 
-const instance = new DiscountProvider();
-
-export const discount = (): DiscountProvider => instance;
+export const discount = { ...actions };
