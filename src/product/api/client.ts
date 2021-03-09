@@ -1,4 +1,9 @@
-import { IProductResponse, ICategoryResponse, IPublicProductResponse, IPublicCategoryResponse} from '../types';
+import {
+  IProductResponse,
+  ICategoryResponse,
+  IPublicProductResponse,
+  IPublicCategoryResponse,
+} from '../types';
 import { Pagination } from '../../common/api';
 import { StringUtils } from '../../common/utils/string';
 import { endpoints } from './endpoints';
@@ -74,13 +79,10 @@ class ProductApi {
    * @static
    * @memberof ProductApi
    */
-    public static getCategoriesById = (categoryId: string) =>
+  public static getCategoriesById = (categoryId: string) =>
     fetcher.get<ICategoryResponse[]>(
       StringUtils.bindContext(endpoints.GET_CATEGORY, { id: categoryId }),
     );
-
-  ///******************************************************************** */ PUBLIC ********************************************************************\\
-  /**
 
   /**
    * Get Public product by id .
@@ -110,9 +112,11 @@ class ProductApi {
    * @static
    * @memberof ProductApi
    */
-  public static getPublicCategories = () =>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public static getPublicCategories = (params?: { [key: string]: any }) =>
     fetcher.get<IPublicCategoryResponse[]>(
       endpoints.GET_PUBLIC_CATEGORIES,
+      params,
     );
 
   /**
@@ -133,9 +137,11 @@ class ProductApi {
    * @static
    * @memberof ProductApi
    */
-  public static getPublicCategoriesAndSub = () =>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public static getPublicCategoriesAndSub = (params?: { [key: string]: any }) =>
     fetcher.get<IPublicCategoryResponse[]>(
       endpoints.GET_PUBLIC_CATEGORIES_AND_SUB,
+      params,
     );
 }
 
