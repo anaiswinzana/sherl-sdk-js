@@ -10,7 +10,7 @@ export interface InitOptions {
 
 const errorFactory = new ErrorFactory('config', 'Config');
 
-export function initializeApp(options: InitOptions): void {
+export function init(options: InitOptions): void {
   if (
     typeof options.apiKey === 'undefined' ||
     typeof options.apiSecret === 'undefined'

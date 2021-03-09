@@ -33,18 +33,18 @@ The script is available in the [releases section](https://github.com/Winzana/she
 
 ### Configuration
 
-Before calling any other methods, you need to initialize the SDK by calling `initializeApp`:
+Before calling any other methods, you need to initialize the SDK by calling `init`:
 
 ```js
 // Import with require
-const sherl = require('@sherl/sdk');
+const Sherl = require('@sherl/sdk');
 
 // OR import syntax
-import sherl from '@sherl/sdk';
+import * as Sherl from '@sherl/sdk';
 
 // OR `window.sherl` for browsers
 
-sherl.initializeApp({
+Sherl.init({
   apiKey: 'YOUR_API_KEY',
   apiSecret: 'YOUR_API_SECRET',
 });
