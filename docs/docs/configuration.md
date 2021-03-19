@@ -3,15 +3,15 @@ id: configuration
 title: Configuration
 ---
 
-Before calling any other methods, you need to initialize the SDK by calling `initializeApp`:
+Before calling any other methods, you need to initialize the SDK by calling `init`:
 
 ```ts
 // With require
-const sherl = require('@sherl/sdk');
+const Sherl = require('@sherl/sdk');
 // OR import
-import sherl from '@sherl/sdk';
+import * as Sherl from '@sherl/sdk';
 
-sherl.initializeApp({
+Sherl.init({
   apiKey: 'YOUR_API_KEY',
   apiSecret: 'YOUR_API_SECRET',
 });
