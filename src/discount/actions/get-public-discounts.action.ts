@@ -7,7 +7,11 @@ export const ListPublicDiscount = async (
   itemsPerPage = 10,
   filters: { [key: string]: any },
 ): Promise<Pagination<IDiscountResponse[]>> => {
-  const response = await DiscountApi.ListPublicDiscount(page, itemsPerPage, filters);
+  const response = await DiscountApi.ListPublicDiscount(
+    page,
+    itemsPerPage,
+    filters,
+  );
 
   if (response.status !== 200) {
     throw new Error(
