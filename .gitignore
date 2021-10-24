@@ -4,3 +4,4 @@ lib-esm
 _bundles
 .vscode
 *.code-workspace
+coverage

@@ -24,7 +24,8 @@
     "clean": "rimraf _bundles lib lib-esm",
     "semantic-release": "semantic-release",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:ci": "jest --ci --coverage"
   },
   "repository": {
     "type": "git",
