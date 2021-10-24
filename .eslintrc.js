@@ -1,5 +1,9 @@
 module.exports = {
   root: true,
+  env: {
+    browser: true,
+    node: true,
+  },
   parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
@@ -17,5 +21,6 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     'no-console': 0,
+    '@typescript-eslint/no-empty-interface': 'warn',
   },
 };

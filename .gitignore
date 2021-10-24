@@ -1,5 +1,6 @@
 node_modules
-/lib
-/lib-esm
-/_bundles
-/.vscode
+lib
+lib-esm
+_bundles
+.vscode
+*.code-workspace
