@@ -64,8 +64,12 @@ class ProductApi {
    * @static
    * @memberof ProductApi
    */
-  public static getCategories = (organizationId: string) =>
+  public static getCategories = (
+    organizationId: string,
+    params?: { [key: string]: any },
+  ) =>
     fetcher.get<ICategoryResponse[]>(endpoints.CATEGORIES_ALL, {
+      ...params,
       organizationId,
     });
 
@@ -79,9 +83,6 @@ class ProductApi {
     fetcher.get<ICategoryResponse[]>(
       StringUtils.bindContext(endpoints.GET_CATEGORY, { id: categoryId }),
     );
-
-  ///******************************************************************** */ PUBLIC ********************************************************************\\
-  /**
 
   /**
    * Get Public product by id .
@@ -111,8 +112,12 @@ class ProductApi {
    * @static
    * @memberof ProductApi
    */
-  public static getPublicCategories = () =>
-    fetcher.get<IPublicCategoryResponse[]>(endpoints.GET_PUBLIC_CATEGORIES);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public static getPublicCategories = (params?: { [key: string]: any }) =>
+    fetcher.get<IPublicCategoryResponse[]>(
+      endpoints.GET_PUBLIC_CATEGORIES,
+      params,
+    );
 
   /**
    * Get public catégories ou avec slug.
@@ -132,9 +137,11 @@ class ProductApi {
    * @static
    * @memberof ProductApi
    */
-  public static getPublicCategoriesAndSub = () =>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public static getPublicCategoriesAndSub = (params?: { [key: string]: any }) =>
     fetcher.get<IPublicCategoryResponse[]>(
       endpoints.GET_PUBLIC_CATEGORIES_AND_SUB,
+      params,
     );
 }
 

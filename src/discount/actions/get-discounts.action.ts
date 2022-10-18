@@ -2,12 +2,12 @@ import { Pagination } from '../../common/api';
 import { IDiscountResponse } from '../types';
 import { DiscountApi } from '../api/client';
 
-export const ListDiscount = async (
+export const getDiscounts = async (
   page = 1,
   itemsPerPage = 10,
   filters: { [key: string]: any },
 ): Promise<Pagination<IDiscountResponse[]>> => {
-  const response = await DiscountApi.ListDiscount(page, itemsPerPage, filters);
+  const response = await DiscountApi.getDiscounts(page, itemsPerPage, filters);
 
   if (response.status !== 200) {
     throw new Error(
